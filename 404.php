@@ -5,7 +5,7 @@
     <div class="postcontent">
       <?php
         $page_requested = get_page_by_path($_SERVER['REQUEST_URI']);
-        $page_status = get_post_status( $page_requested->ID );
+        $page_status = get_post_status( $page_requested?->ID );
         if( $page_status == 'private' && ! is_user_logged_in() ) {
           echo "<h2>This page requires a member login, please login at right to view this page</h2>";
         } else {
